@@ -13,6 +13,7 @@ import {
   DeleteOutlined,
 } from "@ant-design/icons";
 import Analytics from "../components/Analytics";
+import { API_BASE_URL } from "../../../utils/constants";
 const { RangePicker } = DatePicker;
 
 function Home() {
@@ -32,7 +33,7 @@ function Home() {
 
       setLoading(true);
       const response = await axios.post(
-        "/api/transactions/get-all-transactions",
+        `${API_BASE_URL}/finance/get-all-transactions`,
         {
           userid: user._id,
           frequency,
@@ -52,7 +53,7 @@ function Home() {
   const deleteTransaction = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/api/transactions/delete-transaction", {
+      await axios.post(`${API_BASE_URL}/finance/delete-transactions`, {
         transactionId: record._id,
       });
       message.success("Transaction deleted successfully");
