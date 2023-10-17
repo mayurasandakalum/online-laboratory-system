@@ -16,16 +16,8 @@ app.use(morgan("tiny"));
 const con = require("./db/connection.js");
 // const warehouseRoute = require("./routes/warehouseRoute.js");
 // // using routes
-// app.use(require("./routes/customerRoute.js"));
-// app.use(require("./routes/machineRoute.js"));
-// app.use(require("./routes/financeRoute.js"));
-// app.use(require("./routes/supplierPaymentRoute.js"));
-// app.use(require("./routes/supplierQuantityRoute.js"));
-// app.use(require("./routes/timeTargetRoute.js"));
-// app.use(require("./routes/transportRoute.js"));
-// app.use(require("./routes/warehouseRoute.js"));
+app.use("/finance", require("./routes/financeRoute.js"));
 
-// app.use("/driver", express.static("images"));
 con
   .then((db) => {
     if (!db) return process.exit(1);
