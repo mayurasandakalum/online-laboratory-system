@@ -53,7 +53,7 @@ function Home() {
   const deleteTransaction = async (record) => {
     try {
       setLoading(true);
-      await axios.post(`${API_BASE_URL}/finance/delete-transactions`, {
+      await axios.post(`${API_BASE_URL}/finance/delete-transaction`, {
         transactionId: record._id,
       });
       message.success("Transaction deleted successfully");
