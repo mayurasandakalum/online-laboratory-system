@@ -1,5 +1,5 @@
 export const PATHS = {
-  dashboard: "/",
+  appointment: "/appointment",
   feedback: "/feedback",
   patients: "/patients",
   staff: "/staff",
