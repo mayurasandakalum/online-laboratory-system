@@ -1,6 +1,8 @@
 import "../../styles/side-nav-style.css";
 import logo from "../../assets/logo.png";
 
+import { PATHS } from "../../utils/paths";
+
 export const SideNavbar = () => {
   return (
     <div className="nav-container">
@@ -34,7 +36,7 @@ export const SideNavbar = () => {
         </div>
 
         <div className="nav-item">
-          <a href="/add">Finance</a>
+          <a href={PATHS.finance}>Finance</a>
         </div>
 
         <hr className="nav-hr" />
