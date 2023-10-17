@@ -9,7 +9,7 @@ export const SideNavbar = () => {
       <img src={logo} alt="Avatar" className="app-logo" />
       <div className="nav-content">
         <div className="nav-item">
-          <a href="/">Dashboard</a>
+          <a href={PATHS.appointment}>Appointment</a>
         </div>
         <div className="nav-item">
           <a href="/add">Blog & Feedback</a>
