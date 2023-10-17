@@ -16,7 +16,7 @@ app.use(morgan("tiny"));
 const con = require("./db/connection.js");
 // const warehouseRoute = require("./routes/warehouseRoute.js");
 // // using routes
-app.use("/finance", require("./routes/financeRoute.js"));
+app.use("/api/finance", require("./routes/financeRoute.js"));
 
 con
   .then((db) => {

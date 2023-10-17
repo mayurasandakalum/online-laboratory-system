@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SideNavbar, TopNavbar } from "./components/Navbar";
 import Payroll from "./screens/PayrollManagement/Payrolls";
 import Finance from "./screens/FinanceManagement/Finance";
-import Login from "./screens/FinanceManagement/pages/Login";
+import Register from "./screens/FinanceManagement/pages/Login";
 
 import { PATHS } from "./utils/paths";
 import "./App.css";
@@ -23,8 +23,8 @@ const App = () => {
           <div className="main-content">
             <BrowserRouter>
               <Routes>
-                <Route path={`${PATHS.payroll}/*`} element={<Finance />} />
-                <Route path={`${PATHS.finance}/*`} element={<Login />} />
+                <Route path={`${PATHS.finance}/*`} element={<Finance />} />
+                <Route path={`${PATHS.payroll}/*`} element={<Payroll />} />
               </Routes>
             </BrowserRouter>
           </div>

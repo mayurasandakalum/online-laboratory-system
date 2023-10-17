@@ -4,6 +4,8 @@ import { Form, Input, message } from "antd";
 import "../resources/authentication.css";
 import axios from "axios";
 import Spinner from "../components/Spinner";
+import { PATHS } from "../../../utils/paths";
+import { API_BASE_URL } from "../../../utils/constants";
 
 function Login() {
   const [loading, setLoading] = useState(false);
@@ -12,14 +14,17 @@ function Login() {
   const onFinish = async (values) => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/login", values);
+      const response = await axios.post(
+        `${API_BASE_URL}/finance/login`,
+        values
+      );
       localStorage.setItem(
         "Lab-Management-User",
         JSON.stringify({ ...response.data, password: "" })
       );
       setLoading(false);
       message.success("Login Successfull");
-      naviagate("/");
+      naviagate(PATHS.finance);
     } catch (error) {
       setLoading(false);
       message.error("Login failed");
@@ -68,7 +73,7 @@ function Login() {
             </Form.Item>
 
             <div className="d-flex justify-content-between align-items-center">
-              <Link to="/register">
+              <Link to={`${PATHS.finance}/register`}>
                 Not Registered Yet? Click here to register
               </Link>
               <button className="primary" type="submit">

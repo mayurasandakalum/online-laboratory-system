@@ -6,11 +6,9 @@ import "./App.css";
 
 function Finance() {
   return (
-    // <div className="App">
-    //   <BrowserRouter>
     <Routes>
       <Route
-        path="/"
+        path=""
         element={
           <ProtectedRoute>
             <Home />
@@ -20,8 +18,6 @@ function Finance() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
-    //   </BrowserRouter>
-    // </div>
   );
 }
 
@@ -29,7 +25,7 @@ export function ProtectedRoute(props) {
   if (localStorage.getItem("Lab-Management-User")) {
     return props.children;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="login" />;
   }
 }
 
