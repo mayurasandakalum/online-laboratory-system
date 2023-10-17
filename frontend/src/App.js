@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SideNavbar, TopNavbar } from "./components/Navbar";
 import Payroll from "./screens/PayrollManagement/Payrolls";
 import Finance from "./screens/FinanceManagement/Finance";
-import Register from "./screens/FinanceManagement/pages/Login";
 
 import { PATHS } from "./utils/paths";
 import "./App.css";
