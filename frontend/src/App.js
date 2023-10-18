@@ -8,6 +8,8 @@ import Appointment from "./screens/AppointmentManagement/Appointment";
 
 import { PATHS } from "./utils/paths";
 import "./App.css";
+import Staff from "./screens/StaffManagement/Staff";
+import AddEmployee from "./screens/StaffManagement/components/AddEmployee";
 
 const App = () => {
   return (
@@ -25,7 +27,11 @@ const App = () => {
               <Routes>
                 <Route path={`${PATHS.finance}/*`} element={<Finance />} />
                 <Route path={`${PATHS.payroll}/*`} element={<Payroll />} />
-                <Route path={`${PATHS.appointment}/*`} element={<Appointment />} />
+                <Route
+                  path={`${PATHS.appointment}/*`}
+                  element={<Appointment />}
+                />
+                <Route path={`${PATHS.staff}/*`} element={<AddEmployee />} />
               </Routes>
             </BrowserRouter>
           </div>

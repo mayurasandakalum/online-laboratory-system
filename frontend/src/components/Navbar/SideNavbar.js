@@ -12,27 +12,27 @@ export const SideNavbar = () => {
           <a href={PATHS.appointment}>Appointment</a>
         </div>
         <div className="nav-item">
-          <a href="/add">Blog & Feedback</a>
+          <a href={PATHS.feedback}>Blog & Feedback</a>
         </div>
 
         <div className="nav-item">
-          <a href="/add">Patients</a>
+          <a href={PATHS.patients}>Patients</a>
         </div>
 
         <div className="nav-item">
-          <a href="/add">Staff members</a>
+          <a href={PATHS.staff}>Staff members</a>
         </div>
 
         <div className="nav-item">
-          <a href="/add">Inventory</a>
+          <a href={PATHS.inventory}>Inventory</a>
         </div>
 
         <div className="nav-item">
-          <a href="/add">Lab Reports</a>
+          <a href={PATHS.labReports}>Lab Reports</a>
         </div>
 
         <div className="nav-item">
-          <a href="/payroll">Attendence & Payroll</a>
+          <a href={PATHS.payroll}>Attendence & Payroll</a>
         </div>
 
         <div className="nav-item">
