@@ -14,6 +14,7 @@ export default class Staff extends Component {
   render() {
     return (
       <Routes>
+        <Route path="/" exact element={<EmployeeList />} />
         <Route path="/EmployeeList" exact element={<EmployeeList />} />
         <Route path="/AddEmployee" exact element={<AddEmployee />} />
         <Route path="/EditEmployee/:id" exact element={<EditEmployee />} />

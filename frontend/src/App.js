@@ -38,6 +38,7 @@ const App = () => {
                   element={<Appointment />}
                 />
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Route
                   path={`${PATHS.patients}/*`}
                   element={
@@ -49,6 +50,9 @@ const App = () => {
 =======
                 <Route path={`${PATHS.staff}/*`} element={<AddEmployee />} />
 >>>>>>> 604f21e (add staff to frontend)
+=======
+                <Route path={`${PATHS.staff}/*`} element={<Staff />} />
+>>>>>>> 15be47e (some changes in staff)
               </Routes>
             </BrowserRouter>
           </div>

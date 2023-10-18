@@ -16,6 +16,7 @@ import {
 
 import "./add-employee-style.css";
 import { API_BASE_URL } from "../../../utils/constants";
+import { PATHS } from "../../../utils/paths";
 
 const AddEmployee = () => {
   const [state, setState] = useState({
@@ -45,7 +46,7 @@ const AddEmployee = () => {
     axios.post(`${API_BASE_URL}/staff/post`, data).then((res) => {
       if (res.data.success) {
         console.log(res.data.success._id);
-        window.location.href = "/EmployeeList";
+        window.location.href = `${PATHS.staff}/EmployeeList`;
         setState({
           NIC: "",
           name: "",
@@ -79,7 +80,7 @@ const AddEmployee = () => {
         }}
       >
         <Box sx={{ padding: "20px 0", width: "100%", maxWidth: "600px" }}>
-          <a href="/EmployeeList">
+          <a href={`${PATHS.staff}/EmployeeList`}>
             <button
               className="backBtn"
               color="primary"
