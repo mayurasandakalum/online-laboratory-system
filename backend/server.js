@@ -14,8 +14,6 @@ app.use(morgan("tiny"));
 
 // mongodb connection
 const con = require("./db/connection.js");
-// const warehouseRoute = require("./routes/warehouseRoute.js");
-// // using routes
 app.use("/api/finance", require("./routes/financeRoute.js"));
 <<<<<<< HEAD
 app.use("/api/patients", require("./routes/workouts.js"));

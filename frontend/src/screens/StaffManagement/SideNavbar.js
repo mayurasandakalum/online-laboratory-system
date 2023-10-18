@@ -1,5 +1,5 @@
-import "../../styles/side-nav-style.css";
-import logo from "../../assets/logo.png";
+import "./side-nav-style.css";
+import logo from "./components/logo.png";
 
 export const SideNavbar = () => {
   return (
