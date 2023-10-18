@@ -17,9 +17,14 @@ const con = require("./db/connection.js");
 // const warehouseRoute = require("./routes/warehouseRoute.js");
 // // using routes
 app.use("/api/finance", require("./routes/financeRoute.js"));
+<<<<<<< HEAD
 app.use("/api/patients", require("./routes/workouts.js"));
 app.use("/api/payroll", require("./routes/payroll-route.js"));
 app.use("/api/appointment", require("./routes/appoinment-route.js"));
+=======
+app.use("/api/staff", require("./routes/staffRoute.js"));
+
+>>>>>>> a56a53a (add staff to backend)
 con
   .then((db) => {
     if (!db) return process.exit(1);
