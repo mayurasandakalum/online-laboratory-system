@@ -17,6 +17,7 @@ const con = require("./db/connection.js");
 // const warehouseRoute = require("./routes/warehouseRoute.js");
 // // using routes
 app.use("/api/finance", require("./routes/financeRoute.js"));
+app.use("/api/staff", require("./routes/staffRoute.js"));
 
 con
   .then((db) => {
