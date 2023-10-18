@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import "jspdf-autotable";
 
 import { API_BASE_URL } from "../../../utils/constants";
+import { PATHS } from "../../../utils/paths";
 
 function withParams(Component) {
   return (props) => <Component params={useParams()} />;
@@ -138,7 +139,7 @@ class EmployeeList extends Component {
       <div className="mt-5">
         <div className="page-container">
           <div className="header-container">
-            <a href="/AddEmployee">
+            <a href={`${PATHS.staff}/AddEmployee`}>
               <button className="backBtn">Add Employee</button>
             </a>
 
@@ -212,7 +213,7 @@ class EmployeeList extends Component {
 
                     <td>
                       <a
-                        href={`/EditEmployee/${employee._id}`}
+                        href={`${PATHS.staff}/EditEmployee/${employee._id}`}
                         className="btn btn-success"
                       >
                         <i className="fas fa-edit"></i>
@@ -224,7 +225,7 @@ class EmployeeList extends Component {
             </table>
           </div>
           <br></br>
-          <a href="/EmployeePreview">
+          <a href={`${PATHS.staff}/EmployeePreview`}>
             <button className="backBtn">Save as PDF</button>
           </a>
         </div>

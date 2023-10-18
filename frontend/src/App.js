@@ -31,7 +31,7 @@ const App = () => {
                   path={`${PATHS.appointment}/*`}
                   element={<Appointment />}
                 />
-                <Route path={`${PATHS.staff}/*`} element={<AddEmployee />} />
+                <Route path={`${PATHS.staff}/*`} element={<Staff />} />
               </Routes>
             </BrowserRouter>
           </div>

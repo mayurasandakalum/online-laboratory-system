@@ -4,6 +4,8 @@ import { useParams, useLocation, Link } from "react-router-dom";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import { API_BASE_URL } from "../../../utils/constants";
+import { PATHS } from "../../../utils/paths";
+
 function withParams(Component) {
   return (props) => <Component params={useParams()} />;
 }
@@ -25,7 +27,7 @@ class EmployeePreview extends Component {
   }
 
   retrievePosts() {
-    axios.get(`${API_BASE_URL}/api/posts`).then((res) => {
+    axios.get(`${API_BASE_URL}/staff/posts`).then((res) => {
       if (res.data.success) {
         this.setState({ employee: res.data.existingPosts });
         console.log(this.state.employee);
@@ -80,10 +82,17 @@ class EmployeePreview extends Component {
 
   render() {
     return (
-      <div className="mt-5">
-        <div className="container">
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "max-content" }}>
           <div className="add_btn mt-2 mb-2">
-            <a href="/EmployeeList">
+            <a href={`${PATHS.staff}/EmployeeList`}>
               <button className="backBtn">Employee List</button>
             </a>
             <button onClick={this.handlePrint} className="backBtn">
@@ -93,7 +102,7 @@ class EmployeePreview extends Component {
           <br />
           <h3>Employee Detail List</h3>
           <div className="table-responsive">
-            <table class="table" id="EmployeeTable">
+            <table className="table" id="EmployeeTable">
               <thead>
                 <tr className="table-dark">
                   <th scope="col">No.</th>
@@ -108,28 +117,19 @@ class EmployeePreview extends Component {
                 </tr>
               </thead>
               <tbody>
-                {" "}
                 {this.state.employee.map((employee, index) => (
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
-
                     <td> {employee.NIC}</td>
-
                     <td>{employee.name}</td>
-
                     <td>{employee.address}</td>
-
                     <td>{employee.dateOfBirth.substring(0, 10)}</td>
-
                     <td>{employee.gender}</td>
-
                     <td>{employee.contactNo}</td>
-
                     <td>{employee.type}</td>
-
                     <td>{employee.salary}</td>
                   </tr>
-                ))}{" "}
+                ))}
               </tbody>
             </table>
           </div>

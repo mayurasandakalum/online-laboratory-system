@@ -18,6 +18,7 @@ import {
   Typography,
 } from "@mui/material";
 import { API_BASE_URL } from "../../../utils/constants";
+import { PATHS } from "../../../utils/paths";
 
 function withParams(Component) {
   return (props) => <Component params={useParams()} />;
@@ -103,7 +104,7 @@ class EditEmployee extends Component {
             confirmButtonText: "OK",
           });
           setTimeout(() => {
-            window.location.href = `/EmployeeList`;
+            window.location.href = `/staff/EmployeeList`;
           }, 2500);
         } else {
           alert("Update Failed");
@@ -130,11 +131,21 @@ class EditEmployee extends Component {
     };
 
     return (
-      <Container className="container">
-        <Box>
-          <a href="/EmployeeList">
-            <button className="backBtn">Employee List</button>
-          </a>
+      <Container>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box sx={{ padding: "20px 0", width: "100%", maxWidth: "600px" }}>
+            <a href={`${PATHS.staff}/EmployeeList`}>
+              <button className="backBtn">Employee List</button>
+            </a>
+          </Box>
 
           <Card className="card">
             <CardContent>
@@ -142,7 +153,11 @@ class EditEmployee extends Component {
                 Update Employee
               </Typography>
               <br />
-              <form className="form-container" onSubmit={this.onSubmit}>
+              <form
+                className="form-container"
+                onSubmit={this.onSubmit}
+                style={{ height: "500px", overflow: "auto" }}
+              >
                 <TextField
                   id="outlined-basic"
                   label="NIC"
@@ -153,6 +168,7 @@ class EditEmployee extends Component {
                   onChange={this.handleChange}
                   placeholder="NIC"
                   required
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
@@ -165,6 +181,7 @@ class EditEmployee extends Component {
                   value={this.state.name}
                   onChange={this.handleChange}
                   placeholder="Name"
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
@@ -178,6 +195,7 @@ class EditEmployee extends Component {
                   value={this.state.address}
                   onChange={this.handleChange}
                   placeholder="Address"
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
@@ -191,11 +209,12 @@ class EditEmployee extends Component {
                   value={this.state.dateOfBirth}
                   onChange={this.handleChange}
                   max={new Date().toISOString().split("T")[0]}
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
 
-                <FormControl variant="outlined">
+                <FormControl variant="outlined" sx={{ width: "100%" }}>
                   <InputLabel>Gender</InputLabel>
                   <Select
                     name="gender"
@@ -223,11 +242,12 @@ class EditEmployee extends Component {
                   maxLength="10"
                   required
                   pattern="\d{}"
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
 
-                <FormControl variant="outlined">
+                <FormControl variant="outlined" sx={{ width: "100%" }}>
                   <InputLabel>Type</InputLabel>
                   <Select
                     name="type"
@@ -261,6 +281,7 @@ class EditEmployee extends Component {
                   onChange={this.handleChange}
                   required
                   min="30000"
+                  sx={{ width: "100%" }}
                 />
                 <br />
                 <br />
