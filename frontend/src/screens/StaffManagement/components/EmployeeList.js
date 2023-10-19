@@ -168,6 +168,7 @@ class EmployeeList extends Component {
               <thead>
                 <tr className="table-row-head">
                   <th scope="col">No.</th>
+                  <th scope="col">ID</th>
                   <th scope="col">NIC</th>
                   <th scope="col">Name</th>
                   <th scope="col">country</th>
@@ -187,6 +188,7 @@ class EmployeeList extends Component {
                   <tr className="table-row" key={index}>
                     <th scope="row">{index + 1}</th>
 
+                    <td> {employee._id}</td>
                     <td> {employee.NIC}</td>
 
                     <td>{employee.name}</td>
