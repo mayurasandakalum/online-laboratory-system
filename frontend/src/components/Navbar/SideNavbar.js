@@ -16,7 +16,7 @@ export const SideNavbar = () => {
         </div>
 
         <div className="nav-item">
-          <a href="/add">Patients</a>
+          <a href={PATHS.patients}>Patients</a>
         </div>
 
         <div className="nav-item">

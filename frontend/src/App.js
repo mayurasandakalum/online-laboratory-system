@@ -5,9 +5,12 @@ import { SideNavbar, TopNavbar } from "./components/Navbar";
 import Payroll from "./screens/PayrollManagement/Payrolls";
 import Finance from "./screens/FinanceManagement/Finance";
 import Appointment from "./screens/AppointmentManagement/Appointment";
+import Patient from "./screens/PatientManagement/Patient";
 
 import { PATHS } from "./utils/paths";
 import "./App.css";
+// import { WorkoutsContextProvider } from './context/WorkoutContext'
+import { WorkoutsContextProvider } from "./screens/PatientManagement/context/WorkoutContext";
 
 const App = () => {
   return (
@@ -25,7 +28,18 @@ const App = () => {
               <Routes>
                 <Route path={`${PATHS.finance}/*`} element={<Finance />} />
                 <Route path={`${PATHS.payroll}/*`} element={<Payroll />} />
-                <Route path={`${PATHS.appointment}/*`} element={<Appointment />} />
+                <Route
+                  path={`${PATHS.appointment}/*`}
+                  element={<Appointment />}
+                />
+                <Route
+                  path={`${PATHS.patients}/*`}
+                  element={
+                    <WorkoutsContextProvider>
+                      <Patient />
+                    </WorkoutsContextProvider>
+                  }
+                />
               </Routes>
             </BrowserRouter>
           </div>

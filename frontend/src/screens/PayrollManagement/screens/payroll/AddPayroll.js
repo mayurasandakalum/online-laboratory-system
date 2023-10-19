@@ -1,172 +1,189 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/add-payroll-style.css";
-import { Alert } from "../../components/Alert/Alert";
+import axios from "axios";
+import {
+  Container,
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
+import { API_BASE_URL } from "../../../../utils/constants";
 
-const initialState = {
-  id: "",
-  name: "",
-  payDate: "",
-  startingDate: "",
-  endDate: "",
-};
 export const AddPayroll = () => {
-  const [openAlert, setOpenAleart] = useState(false);
-  const navigator = useNavigate();
-  const [formData, setFormData] = useState(initialState);
-  const [error, SetError] = useState({
+  const [payrollData, setPayrollData] = useState({
     id: "",
     name: "",
-    payDate: "",
+    endingDate: "",
+    grossPay: 0,
     startingDate: "",
-    endDate: "",
+    paymentDate: "",
+    totalHours: 0,
   });
 
-  /*
-   * input onChange method
-   * @param {e} e
-   */
-  const onchange = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    //validating user inputs
-    switch (name) {
-      case "name":
-        error.name =
-          value.length <= 0 ? "Name can not be empty! Ex:- Jhon doe " : "";
-        formData.name = value;
-        break;
-      case "id":
-        error.id = value.length <= 0 ? "Id can not be empty! Ex:- 000001 " : "";
-        formData.id = value;
-        break;
-      case "payDate":
-        error.payDate =
-          value.length <= 0
-            ? "Pay date name can not be empty! Ex:- 2023-10-01 "
-            : "";
-        formData.payDate = value;
-        break;
-      case "startingDate":
-        error.startingDate =
-          value.length <= 0
-            ? "Starting date number can not be empty! Ex:- 2023-10-01 "
-            : "";
-        formData.startingDate = value;
-        break;
-      case "payment":
-        error.endDate =
-          value.length <= 0 ? "End date can not be empty! 2023-10-30 " : "";
-        formData.endDate = value;
-        break;
-      default:
-        break;
+    setPayrollData({ ...payrollData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/payroll/add`,
+        payrollData
+      );
+
+      if (response.data.success) {
+        navigate("/payroll");
+      } else {
+        alert("Failed to add payroll data");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while adding payroll data");
     }
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(e.target.name + " " + e.target.value);
+  };
+
+  const formContainerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  };
+
+  const inputStyle = {
+    width: "100%",
+    marginBottom: "15px",
+    padding: "10px",
+  };
+
+  const dateInputStyle = {
+    width: "100%",
+    marginBottom: "15px",
+    padding: "15px 10px",
+    marginTop: "5px", // Add margin to separate date fields
+  };
+
+  const buttonStyle = {
+    marginTop: "15px",
+  };
+
+  const cardStyle = {
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: "20px",
   };
 
   return (
-    <>
-      {openAlert ? (
-        <Alert
-          message="Success"
-          type="error"
-          open={openAlert}
-          setOpen={setOpenAleart}
-        />
-      ) : (
-        <div className="body-container">
-          <h2>Add payment</h2>
-          <div className="page-image"></div>
-          <div className="form-container">
-            <div className="form-left">
-              <div className="form-input">
-                <label htmlFor="name">Employee Name</label>
-                <input
-                  className="input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter employee name"
-                  onChange={onchange}
-                />
-                <div className="error-text">{error.name ? error.name : ""}</div>
+    <Container className="container">
+      <br></br>
+      <Box>
+        <Card className="card" style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" component="div">
+              Add Payroll Data
+            </Typography>
+            <form
+              className="form-container"
+              onSubmit={handleSubmit}
+              style={formContainerStyle}
+            >
+              <TextField
+                id="outlined-basic"
+                label="ID"
+                variant="outlined"
+                type="text"
+                name="id"
+                value={payrollData.id}
+                onChange={handleInputChange}
+                placeholder="ID"
+                required
+                style={inputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
+                type="text"
+                name="name"
+                value={payrollData.name}
+                onChange={handleInputChange}
+                placeholder="Name"
+                style={inputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Ending Date"
+                variant="outlined"
+                type="date"
+                name="endingDate"
+                value={payrollData.endingDate}
+                onChange={handleInputChange}
+                style={dateInputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Gross Pay"
+                variant="outlined"
+                type="number"
+                name="grossPay"
+                value={payrollData.grossPay}
+                onChange={handleInputChange}
+                required
+                style={inputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Starting Date"
+                variant="outlined"
+                type="date"
+                name="startingDate"
+                value={payrollData.startingDate}
+                onChange={handleInputChange}
+                style={dateInputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Payment Date"
+                variant="outlined"
+                type="date"
+                name="paymentDate"
+                value={payrollData.paymentDate}
+                onChange={handleInputChange}
+                style={dateInputStyle}
+              />
+
+              <TextField
+                id="outlined-basic"
+                label="Total Hours"
+                variant="outlined"
+                type="number"
+                name="totalHours"
+                value={payrollData.totalHours}
+                onChange={handleInputChange}
+                required
+                style={inputStyle}
+              />
+
+              <div className="button-container" style={buttonStyle}>
+                <Button variant="contained" color="primary" type="submit">
+                  Add Payroll Data
+                </Button>
               </div>
-              <div className="form-input">
-                <label htmlFor="date">Employee Id</label>
-                <input
-                  className="input-date"
-                  type="date"
-                  id="date"
-                  name="date"
-                  placeholder="Enter date"
-                  onChange={onchange}
-                />
-                <div className="error-text">{error.id ? error.id : ""}</div>
-              </div>
-              <div className="form-input">
-                <label htmlFor="payDate">Pay Date</label>
-                <input
-                  className="input-date"
-                  type="date"
-                  id="payDate"
-                  name="payDate"
-                  placeholder="Enter pay date"
-                  onChange={onchange}
-                />
-                <div className="error-text">
-                  {error.payDate ? error.payDate : ""}
-                </div>
-              </div>
-            </div>
-            <div className="form-right">
-              <div className="form-input">
-                <label htmlFor="startingDate">Starting Date</label>
-                <input
-                  className="input-date"
-                  type="date"
-                  id="startingDate"
-                  name="startingDate"
-                  placeholder="Enter starting date"
-                  onChange={onchange}
-                />
-                <div className="error-text">
-                  {error.startingDate ? error.startingDate : ""}
-                </div>
-              </div>
-              <div className="form-input">
-                <label htmlFor="endDate">End Date</label>
-                <input
-                  className="input-date"
-                  type="date"
-                  id="endDate"
-                  name="endDate"
-                  placeholder="Enter end date"
-                  onChange={onchange}
-                />
-                <div className="error-text">
-                  {error.endDate ? error.endDate : ""}
-                </div>
-              </div>
-              <div className="button-row">
-                <button
-                  className="btn-submit"
-                  onClick={() => setOpenAleart(!openAlert)}
-                >
-                  Submit
-                </button>
-                <button
-                  className="btn-cancle"
-                  onClick={() => navigator("/payroll")}
-                >
-                  Cancle
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+            </form>
+          </CardContent>
+        </Card>
+      </Box>
+    </Container>
   );
 };
