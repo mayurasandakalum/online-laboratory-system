@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@date-io/date-fns": "^1.3.13",
 =======
 >>>>>>> 604f21e (add staff to frontend)
+=======
+>>>>>>> b051a6aebf44d80fd71485b6bfcb7ba8c718279e
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -21,12 +24,16 @@
     "aos": "^2.3.4",
     "axios": "^1.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "date-fns": "^2.30.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.7.0",
 =======
     "jspdf": "^2.5.1",
 >>>>>>> 604f21e (add staff to frontend)
+=======
+    "jspdf": "^2.5.1",
+>>>>>>> b051a6aebf44d80fd71485b6bfcb7ba8c718279e
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

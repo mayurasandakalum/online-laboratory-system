@@ -10,12 +10,17 @@ import Patient from "./screens/PatientManagement/Patient";
 import { PATHS } from "./utils/paths";
 import "./App.css";
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { WorkoutsContextProvider } from './context/WorkoutContext'
 import { WorkoutsContextProvider } from "./screens/PatientManagement/context/WorkoutContext";
 =======
 import Staff from "./screens/StaffManagement/Staff";
 import AddEmployee from "./screens/StaffManagement/components/AddEmployee";
 >>>>>>> 604f21e (add staff to frontend)
+=======
+import Staff from "./screens/StaffManagement/Staff";
+import AddEmployee from "./screens/StaffManagement/components/AddEmployee";
+>>>>>>> b051a6aebf44d80fd71485b6bfcb7ba8c718279e
 
 const App = () => {
   return (
@@ -39,6 +44,7 @@ const App = () => {
                 />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Route
                   path={`${PATHS.patients}/*`}
                   element={
@@ -53,6 +59,9 @@ const App = () => {
 =======
                 <Route path={`${PATHS.staff}/*`} element={<Staff />} />
 >>>>>>> 15be47e (some changes in staff)
+=======
+                <Route path={`${PATHS.staff}/*`} element={<Staff />} />
+>>>>>>> b051a6aebf44d80fd71485b6bfcb7ba8c718279e
               </Routes>
             </BrowserRouter>
           </div>

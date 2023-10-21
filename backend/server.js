@@ -16,10 +16,13 @@ app.use(morgan("tiny"));
 const con = require("./db/connection.js");
 app.use("/api/finance", require("./routes/financeRoute.js"));
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use("/api/patients", require("./routes/workouts.js"));
 app.use("/api/payroll", require("./routes/payroll-route.js"));
 app.use("/api/appointment", require("./routes/appoinment-route.js"));
 =======
+=======
+>>>>>>> b051a6aebf44d80fd71485b6bfcb7ba8c718279e
 app.use("/api/staff", require("./routes/staffRoute.js"));
 
 >>>>>>> a56a53a (add staff to backend)
