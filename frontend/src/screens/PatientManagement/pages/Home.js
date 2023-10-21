@@ -24,8 +24,11 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className="home">
-      <div className="workouts">
+    <div className="home" style={{ display: "flex", width: "100%" }}>
+      <div
+        className="workouts"
+        style={{ width: "100%", marginLeft: "30px", marginRight: "20px" }}
+      >
         {workouts &&
           workouts.map((workout) => (
             <WorkoutDetails key={workout._id} workout={workout} />

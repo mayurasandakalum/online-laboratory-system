@@ -43,36 +43,45 @@ const WorkoutForm = () => {
   };
 
   return (
-    <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a New Workout</h3>
+    <div style={{ display: "flex", justifyContent: "end" }}>
+      <form
+        className="create"
+        onSubmit={handleSubmit}
+        style={{ display: "flex", flexDirection: "column", width: "300px" }}
+      >
+        <h3>Add a New Workout</h3>
 
-      <label>Enter Name</label>
-      <input
-        type="text"
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        className={emptyFields.includes("title") ? "error" : ""}
-      />
+        <label>Enter Name</label>
+        <input
+          type="text"
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          className={emptyFields.includes("title") ? "error" : ""}
+          style={{ width: "100%" }}
+        />
 
-      <label>Enter Load:</label>
-      <input
-        type="number"
-        onChange={(e) => setLoad(e.target.value)}
-        value={load}
-        className={emptyFields.includes("load") ? "error" : ""}
-      />
+        <label>Enter Load:</label>
+        <input
+          type="number"
+          onChange={(e) => setLoad(e.target.value)}
+          value={load}
+          className={emptyFields.includes("load") ? "error" : ""}
+          style={{ width: "100%" }}
+        />
 
-      <label>Enter Reps</label>
-      <input
-        type="number"
-        onChange={(e) => setReps(e.target.value)}
-        value={reps}
-        className={emptyFields.includes("reps") ? "error" : ""}
-      />
+        <label>Enter Reps</label>
+        <input
+          type="number"
+          onChange={(e) => setReps(e.target.value)}
+          value={reps}
+          className={emptyFields.includes("reps") ? "error" : ""}
+          style={{ width: "100%" }}
+        />
 
-      <button>Add Workout</button>
-      {error && <div className="error">{error}</div>}
-    </form>
+        <button>Add Workout</button>
+        {error && <div className="error">{error}</div>}
+      </form>
+    </div>
   );
 };
 
