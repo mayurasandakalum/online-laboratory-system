@@ -15,7 +15,7 @@ export const ViewAppoinment = () => {
 
   useEffect(() => {
     axios
-      .get(`${{ API_BASE_URL }}/appointment/get`)
+      .get(`${ API_BASE_URL }/appointment/get`)
       .then((response) => {
         setAppointments(response.data);
       })
@@ -30,7 +30,7 @@ export const ViewAppoinment = () => {
   };
   const deleteAppoinment = () => {
     axios
-      .delete(`${{ API_BASE_URL }}/delete/${tempAppoinment._id}`)
+      .delete(`${ API_BASE_URL }/appointment/delete/${tempAppoinment._id}`)
       .then((response) => {
         setAppointments(
           appointments.filter(
@@ -45,7 +45,7 @@ export const ViewAppoinment = () => {
   };
 
   const gotoEditAppoinment = (row) => {
-    navigator(`/edit/${row._id}`);
+    navigator(`/appointment/update/${row._id}`);
   };
   return (
     <div className="">

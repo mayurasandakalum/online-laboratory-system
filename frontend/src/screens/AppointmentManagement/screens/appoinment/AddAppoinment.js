@@ -32,8 +32,10 @@ export const AddAppoinment = () => {
   });
 
   const handleSubmit = () => {
+    console.log("Form data:", formData);
+    
     axios
-      .post(`${{ API_BASE_URL }}/appointment/add`, formData)
+      .post(`${ API_BASE_URL }/appointment/add`, formData)
       .then((response) => {
         console.log("Data submitted successfully:", response.data);
         setaleartType(true);

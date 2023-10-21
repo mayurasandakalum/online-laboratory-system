@@ -4,6 +4,8 @@ const { Appoinment } = require("../models/appoinment-model");
 const addAppoinment = async (req, res) => {
   const appoinment = new Appoinment(req.body);
 
+  console.log("req.body", req.body);
+
   await appoinment.save((err) => {
     if (err) return res.status(400).json({ success: false, err });
     return res.status(200).json({ success: true });

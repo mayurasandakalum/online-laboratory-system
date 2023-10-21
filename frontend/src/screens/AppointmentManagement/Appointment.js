@@ -17,7 +17,7 @@ function Appointment() {
     <Routes>
       <Route path="/" element={<ViewAppoinment />} />
       <Route path="/add" element={<AddAppoinment />} />
-      <Route path="/update" element={<EditAppoinment />} />
+      <Route path="/update/:id" element={<EditAppoinment />} />
     </Routes>
   );
 }

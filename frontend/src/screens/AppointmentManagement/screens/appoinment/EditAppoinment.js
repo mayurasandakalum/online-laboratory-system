@@ -3,6 +3,7 @@ import '../../styles/add-appoinment-style.css';
 import { Alert } from '../../components/Alert/Alert';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../../utils/constants';
 
 const initialState = {
     name :'',
@@ -29,13 +30,18 @@ export  const EditAppoinment = () => {
         date:'',
         time:'',
     });
+
+    useEffect(() => {
+        console.log("id", id);
+    }, [id])
       
 
     useEffect(() => {
         // Fetch existing data if in edit mode
         
-            axios.get(`http://localhost:8070/api/v0/apponment/get/${id.id}`)
+            axios.get(`${ API_BASE_URL }/appointment/get/${id.id}`)
                 .then(response => { 
+                    console.log('Data fetched successfully:', response.data);
                     setFormData(response.data);
                 })
                 .catch(error => {
@@ -45,7 +51,7 @@ export  const EditAppoinment = () => {
     }, []);
 
     const handleSubmit = () => { 
-        axios.put(`http://localhost:8070/api/v0/apponment/update/${id.id}`,formData)
+        axios.put(`${ API_BASE_URL }/appointment/update/${id.id}`,formData)
         .then(response => { 
             console.log('Data submitted successfully:', response.data); 
             setaleartType(true)
