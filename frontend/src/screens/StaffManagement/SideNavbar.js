@@ -1,7 +1,5 @@
-import "../../styles/side-nav-style.css";
-import logo from "../../assets/logo.png";
-
-import { PATHS } from "../../utils/paths";
+import "./side-nav-style.css";
+import logo from "./components/logo.png";
 
 export const SideNavbar = () => {
   return (
@@ -9,34 +7,34 @@ export const SideNavbar = () => {
       <img src={logo} alt="Avatar" className="app-logo" />
       <div className="nav-content">
         <div className="nav-item">
-          <a href={PATHS.appointment}>Appointment</a>
+          <a href="/">Dashboard</a>
         </div>
         <div className="nav-item">
-          <a href={PATHS.feedback}>Blog & Feedback</a>
-        </div>
-
-        <div className="nav-item">
-          <a href={PATHS.patients}>Patients</a>
+          <a href="/add">Blog & Feedback</a>
         </div>
 
         <div className="nav-item">
-          <a href={PATHS.staff}>Staff members</a>
+          <a href="/add">Patients</a>
         </div>
 
         <div className="nav-item">
-          <a href={PATHS.inventory}>Inventory</a>
+          <a href="/add">Staff members</a>
         </div>
 
         <div className="nav-item">
-          <a href={PATHS.labReports}>Lab Reports</a>
+          <a href="/add">Inventory</a>
         </div>
 
         <div className="nav-item">
-          <a href={PATHS.payroll}>Attendence & Payroll</a>
+          <a href="/add">Lab Reports</a>
         </div>
 
         <div className="nav-item">
-          <a href={PATHS.finance}>Finance</a>
+          <a href="/add">Attendence & Payroll</a>
+        </div>
+
+        <div className="nav-item">
+          <a href="/add">Finance</a>
         </div>
 
         <hr className="nav-hr" />

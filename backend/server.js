@@ -14,12 +14,13 @@ app.use(morgan("tiny"));
 
 // mongodb connection
 const con = require("./db/connection.js");
-// const warehouseRoute = require("./routes/warehouseRoute.js");
-// // using routes
 app.use("/api/finance", require("./routes/financeRoute.js"));
 app.use("/api/patients", require("./routes/workouts.js"));
 app.use("/api/payroll", require("./routes/payroll-route.js"));
 app.use("/api/appointment", require("./routes/appoinment-route.js"));
+app.use("/api/staff", require("./routes/staffRoute.js"));
+app.use("/api/labReport", require("./routes/labReportRoute.js"));
+
 con
   .then((db) => {
     if (!db) return process.exit(1);

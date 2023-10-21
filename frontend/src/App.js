@@ -6,6 +6,7 @@ import Payroll from "./screens/PayrollManagement/Payrolls";
 import Finance from "./screens/FinanceManagement/Finance";
 import Appointment from "./screens/AppointmentManagement/Appointment";
 import Patient from "./screens/PatientManagement/Patient";
+import Staff from "./screens/StaffManagement/Staff";
 
 import { PATHS } from "./utils/paths";
 import "./App.css";
@@ -40,6 +41,7 @@ const App = () => {
                     </WorkoutsContextProvider>
                   }
                 />
+                <Route path={`${PATHS.staff}/*`} element={<Staff />} />
               </Routes>
             </BrowserRouter>
           </div>
