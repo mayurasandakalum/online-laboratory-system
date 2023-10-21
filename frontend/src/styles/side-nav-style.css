@@ -61,3 +61,17 @@
 .logout{
     background-color: rgba(248, 79, 178, 0.753);
 }
+
+@media print {
+    /* body * {
+      display: none;
+    } */
+    .table {
+      display: table !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
+  

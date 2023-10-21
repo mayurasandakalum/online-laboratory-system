@@ -14,6 +14,8 @@ import {
 } from "@ant-design/icons";
 import Analytics from "../components/Analytics";
 import { API_BASE_URL } from "../../../utils/constants";
+import "./print.css";
+
 const { RangePicker } = DatePicker;
 
 function Home() {

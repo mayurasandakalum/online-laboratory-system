@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="app-container">
       <div className="sub-Container">
-        <div className="side-navbar">
+        <div className="side-navbar no-print">
           <SideNavbar />
         </div>
         <div className="main-body">

@@ -5,7 +5,7 @@ import { PATHS } from "../../utils/paths";
 
 export const SideNavbar = () => {
   return (
-    <div className="nav-container" style={{ marginRight: "0px" }}>
+    <div className="nav-container no-print" style={{ marginRight: "0px" }}>
       <img src={logo} alt="Avatar" className="app-logo" />
       <div className="nav-content">
         <div className="nav-item">
