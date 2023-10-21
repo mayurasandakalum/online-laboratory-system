@@ -51,6 +51,8 @@
   border-radius: 10px;
 }
 .side-navbar{
+  display: flex;
+  justify-content: center;
   width: 20%;
   height: 100%;
   /* background-color: #7ff79d4f; */

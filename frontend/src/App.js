@@ -32,6 +32,7 @@ const App = () => {
                   path={`${PATHS.appointment}/*`}
                   element={<Appointment />}
                 />
+                <Route path={`/*`} element={<Appointment />} />
                 <Route
                   path={`${PATHS.patients}/*`}
                   element={
