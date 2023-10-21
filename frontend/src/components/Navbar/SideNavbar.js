@@ -41,9 +41,9 @@ export const SideNavbar = () => {
 
         <hr className="nav-hr" />
 
-        <div className="nav-item logout">
+        {/* <div className="nav-item logout">
           <a href="/add">Log out</a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

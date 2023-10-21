@@ -60,7 +60,7 @@ const WorkoutForm = () => {
           style={{ width: "100%" }}
         />
 
-        <label>Enter Load:</label>
+        <label>Enter Date:</label>
         <input
           type="number"
           onChange={(e) => setLoad(e.target.value)}
@@ -69,7 +69,7 @@ const WorkoutForm = () => {
           style={{ width: "100%" }}
         />
 
-        <label>Enter Reps</label>
+        <label>Phone number</label>
         <input
           type="number"
           onChange={(e) => setReps(e.target.value)}

@@ -25,6 +25,7 @@ const WorkoutDetails = ({ workout }) => {
 
     if (response.ok) {
       dispatch({ type: "DELETE_WORKOUT", payload: workout._id });
+      window.location.reload();
     }
   };
 
@@ -46,6 +47,8 @@ const WorkoutDetails = ({ workout }) => {
       const updatedWorkout = await response.json();
       dispatch({ type: "UPDATE_WORKOUT", payload: updatedWorkout });
       setIsEditing(false);
+
+      window.location.reload();
     }
   };
 
