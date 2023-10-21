@@ -36,13 +36,13 @@ function Register() {
       <div className="row justify-content-center align-items-center w-100 h-100">
         <div className="col-md-5">
           <div className="lottie">
-            {/* <lottie-player
+            <lottie-player
               src="https://lottie.host/d1bda7d1-79e2-4896-9f22-63c9030b67a0/8DaTbGWeK5.json"
               background="transparent"
               speed="1"
               loop
               autoplay
-            ></lottie-player> */}
+            ></lottie-player>
           </div>
         </div>
         <div className="col-md-4 user-form">

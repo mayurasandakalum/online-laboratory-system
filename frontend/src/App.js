@@ -13,6 +13,7 @@ import "./App.css";
 // import { WorkoutsContextProvider } from './context/WorkoutContext'
 import { WorkoutsContextProvider } from "./screens/PatientManagement/context/WorkoutContext";
 import LabReport from "./screens/LabReportManagement/LabReport";
+import logo from "./assets/logo.png";
 
 const App = () => {
   return (
@@ -32,7 +33,23 @@ const App = () => {
                   path={`${PATHS.appointment}/*`}
                   element={<Appointment />}
                 />
-                <Route path={`/*`} element={<Appointment />} />
+                <Route
+                  path={`/*`}
+                  element={
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        backgroundColor: "rgba(255,255,255,0.9)",
+                      }}
+                    >
+                      <img src={logo} alt="logo" style={{}} />
+                    </div>
+                  }
+                />
                 <Route
                   path={`${PATHS.patients}/*`}
                   element={

@@ -63,9 +63,9 @@ class EmployeePreview extends Component {
     fetch("../images/Logo1.png")
       .then((response) => response.arrayBuffer())
       .then((logoData) => {
-        const logoUrl = URL.createObjectURL(new Blob([logoData]));
+        // const logoUrl = URL.createObjectURL(new Blob([logoData]));
 
-        doc.addImage(logoUrl, "PNG", 65, 10, 80, 80);
+        // doc.addImage(logoUrl, "PNG", 65, 10, 80, 80);
         doc.text("Staff Detail List", 15, 80);
 
         doc.autoTable({
@@ -90,7 +90,7 @@ class EmployeePreview extends Component {
           alignItems: "center",
         }}
       >
-        <div className="container" style={{ maxWidth: "max-content" }}>
+        <div className="" style={{ maxWidth: "max-content" }}>
           <div className="add_btn mt-2 mb-2">
             <a href={`${PATHS.staff}/EmployeeList`}>
               <button className="backBtn">Employee List</button>

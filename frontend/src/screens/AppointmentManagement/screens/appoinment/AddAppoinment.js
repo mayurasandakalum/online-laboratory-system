@@ -33,9 +33,9 @@ export const AddAppoinment = () => {
 
   const handleSubmit = () => {
     console.log("Form data:", formData);
-    
+
     axios
-      .post(`${ API_BASE_URL }/appointment/add`, formData)
+      .post(`${API_BASE_URL}/appointment/add`, formData)
       .then((response) => {
         console.log("Data submitted successfully:", response.data);
         setaleartType(true);
@@ -123,9 +123,9 @@ export const AddAppoinment = () => {
         <div className="body-container">
           <h2>Book an Appoinment</h2>
           <div className="page-image"></div>
-          <div className="form-container">
+          <div className="form-container" style={{ flexDirection: "row" }}>
             <div className="form-left">
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="name">Name</label>
                 <input
                   className="input"
@@ -138,7 +138,7 @@ export const AddAppoinment = () => {
                 />
                 <div className="error-text">{error.name ? error.name : ""}</div>
               </div>
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="mail">E-mail</label>
                 <input
                   className="input"
@@ -151,7 +151,7 @@ export const AddAppoinment = () => {
                 />
                 <div className="error-text">{error.name ? error.mail : ""}</div>
               </div>
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="mobile">Phone Number</label>
                 <input
                   className="input"
@@ -166,7 +166,7 @@ export const AddAppoinment = () => {
                   {error.name ? error.mobile : ""}
                 </div>
               </div>
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="doctor">Doctor</label>
                 <input
                   className="input"
@@ -183,7 +183,7 @@ export const AddAppoinment = () => {
               </div>
             </div>
             <div className="form-right">
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="date">Date</label>
                 <input
                   className="input-date"
@@ -196,7 +196,7 @@ export const AddAppoinment = () => {
                 />
                 <div className="error-text">{error.date ? error.date : ""}</div>
               </div>
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="time">Time</label>
                 <input
                   className="input-date"
@@ -209,7 +209,7 @@ export const AddAppoinment = () => {
                 />
                 <div className="error-text">{error.time ? error.time : ""}</div>
               </div>
-              <div className="form-input">
+              <div className="form-input" style={{ border: "0px" }}>
                 <label htmlFor="payment">Payment Method</label>
                 <select
                   className="input"

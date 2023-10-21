@@ -84,13 +84,13 @@ function Login() {
         </div>
         <div className="col-md-5">
           <div className="lottie">
-            {/* <lottie-player
+            <lottie-player
               src="https://lottie.host/f58fae94-576b-413d-aed1-080261b6664d/FmgyNjDCCo.json"
               background="transparent"
               speed="1"
               loop
               autoplay
-            ></lottie-player> */}
+            ></lottie-player>
           </div>
         </div>
       </div>
