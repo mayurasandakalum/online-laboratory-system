@@ -12,6 +12,7 @@ import { PATHS } from "./utils/paths";
 import "./App.css";
 // import { WorkoutsContextProvider } from './context/WorkoutContext'
 import { WorkoutsContextProvider } from "./screens/PatientManagement/context/WorkoutContext";
+import LabReport from "./screens/LabReportManagement/LabReport";
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
                   }
                 />
                 <Route path={`${PATHS.staff}/*`} element={<Staff />} />
+                <Route path={`${PATHS.labReports}/*`} element={<LabReport />} />
               </Routes>
             </BrowserRouter>
           </div>
