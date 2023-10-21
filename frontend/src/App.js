@@ -22,9 +22,7 @@ const App = () => {
           <SideNavbar />
         </div>
         <div className="main-body">
-          <div className="top-navbar">
-            <TopNavbar />
-          </div>
+          <div className="top-navbar">{/* <TopNavbar /> */}</div>
           <div className="main-content">
             <BrowserRouter>
               <Routes>
